@@ -21,4 +21,8 @@ public class LibraryCard {
 
     @Enumerated(value= EnumType.STRING)
     private CardStatus cardStatus;
+
+    @OneToOne
+    @JoinColumn
+    private Student student;
 }

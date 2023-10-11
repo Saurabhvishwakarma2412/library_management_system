@@ -1,9 +1,6 @@
 package com.example.library.Management.System.Entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -25,4 +22,7 @@ public class Student {
      private String mobile_no;
 
      private String email_id;
+
+     @OneToOne(mappedBy = "student",cascade = CascadeType.ALL)
+    private LibraryCard libraryCard;
 }

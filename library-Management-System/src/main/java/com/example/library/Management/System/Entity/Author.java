@@ -1,12 +1,13 @@
 package com.example.library.Management.System.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -21,4 +22,7 @@ public class Author {
     private String authorname;
 
     private int age;
+
+    @OneToMany( mappedBy="author",cascade = CascadeType.ALL)
+    List<Book> bookList=new ArrayList<>();
 }

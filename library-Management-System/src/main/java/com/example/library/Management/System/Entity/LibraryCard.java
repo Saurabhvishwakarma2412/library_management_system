@@ -17,6 +17,7 @@ public class LibraryCard {
 
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer cardNo;
 
     @Enumerated(value= EnumType.STRING)
